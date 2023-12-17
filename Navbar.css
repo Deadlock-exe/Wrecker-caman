@@ -1,0 +1,436 @@
+/* Navbar */
+
+body {
+    background-color: #101010 !important;
+    width: 100vw;
+    height: 100vh;
+}
+
+.About__navbar {
+    height: 6rem;
+    padding: 0px 4rem 0px 8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 1000;
+    background-color: black;
+    position: fixed;
+}
+
+.navbar-active {
+    transition: all 0.6s ease;
+    background: linear-gradient(to left, rgb(0, 0, 0) 50%, rgb(100, 44, 197) 50%);
+}
+
+.home--link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.home--link:hover {
+    transition: font-size 0.2s ease;
+    font-size: 1.3rem;
+}
+
+.headings-active {
+    color: rgb(255, 255, 255);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    width: 50px;
+    height: 50px;
+}
+
+.menu span:nth-child(1) {
+    display: block;
+    width: 23px;
+    height: 3.3px;
+    background: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.menu span:nth-child(2) {
+    display: block;
+    width: 23px;
+    height: 3.3px;
+    background: #fff;
+}
+
+.menu:hover {
+    animation-name: nav-border;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav-border {
+    0% {
+
+        border-bottom: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    20% {
+
+        border-left: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    40% {
+
+        border-top: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    60% {
+        border-right: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    80% {
+        border-bottom: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+
+    100% {
+        border: double 3px transparent;
+        border-radius: 50%;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(0, 0, 0)), radial-gradient(circle at top left, #f00, #3020ff);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+    }
+}
+
+/* Navbar Menu */
+
+#navbar-menu.is-active span:nth-child(1) {
+    transform: translateY(5.5px) rotate(45deg);
+}
+
+#navbar-menu.is-active span:nth-child(2) {
+    transform: translateY(-5.5px) rotate(-45deg);
+}
+
+.navbar__menu-left {
+    display: flex;
+    margin: 0;
+    position: fixed;
+    top: -1000px;
+    left: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    overflow: -moz-hidden-unscrollable;
+    height: 750%;
+}
+
+.navbar__menu-left.active {
+    position: absolute;
+    top: 5rem;
+    bottom: 0%;
+    left: 0%;
+    opacity: 1;
+    transition: all 0.8s ease;
+    z-index: 99;
+    font-size: 2.8rem;
+    background-color: rgb(100, 44, 197);
+    overflow: -moz-hidden-unscrollable;
+}
+
+
+.navbar__menu-right {
+    display: flex;
+    margin: 0;
+    position: fixed;
+    top: 100%;
+    right: 0;
+    opacity: 0;
+    transition: all 0.5s ease;
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.navbar__menu-right.active {
+    position: fixed;
+    top: 5rem;
+    right: 0%;
+    opacity: 1;
+    transition: all 0.8s ease;
+    z-index: 99;
+    font-size: 2.8rem;
+    background-color: rgb(0, 0, 0);
+    overflow: hidden;
+}
+
+.navbar__container--items {
+    width: 50%;
+    padding: 0rem 2rem;
+    margin-right: 2rem;
+    height: 60vh;
+}
+
+.navbar__menu--Contact {
+    padding: 0 2rem;
+    height: 60vh;
+}
+
+.navbar__menu--Contact p {
+    color: white;
+}
+
+.navbar__menu--Contact p:hover {
+    transition: all 0.5s ease;
+    color: rgb(100, 44, 197);
+}
+
+.navbar__menu--Contact p:nth-child(2) {
+    width: 30rem;
+}
+
+.Profile--Socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 16rem;
+    margin: 2.1rem 0 0 0;
+    font-size: 1.4rem;
+}
+
+.fa-github:hover {
+    color: white;
+}
+
+.fa-discord:hover {
+    color: #6370ff;
+}
+
+.fa-linkedin-in:hover {
+    color: #01537e;
+}
+
+.fa-x-twitter:hover {
+    color: rgb(255, 255, 255);
+}
+
+.fa-instagram:hover {
+    color: #f502be;
+}
+
+.navbar__menu--Contact--btn {
+    font-size: 1rem;
+    background-color: rgb(0, 0, 0);
+    border: 2px solid rgb(255, 255, 255);
+    padding: 6px 15px;
+    transition: all 0.35s;
+    outline: none;
+    position: relative;
+}
+
+.navbar__menu--Contact--btn a {
+    position: relative;
+    z-index: 2;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar__menu--Contact--btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: rgb(223, 223, 223);
+    transition: all 0.35s;
+}
+
+.navbar__menu--Contact--btn:hover a {
+    color: rgb(0, 0, 0);
+}
+
+.navbar__menu--Contact--btn:hover::after {
+    width: 100%;
+}
+
+/* Navbar Links */
+
+.navbar__item {
+    list-style: none;
+    cursor: pointer;
+    margin-bottom: 1.2rem;
+}
+
+.navbar__links {
+    text-decoration: none;
+    color: rgb(248, 248, 248);
+    font-weight: 500;
+    letter-spacing: 8px;
+    transition: letter-spacing 0.2s ease;
+}
+
+.navbar__links:hover {
+    color: black;
+}
+
+.navbar__links--hover-sec:hover {
+    letter-spacing: 15px;
+}
+
+@media screen and (max-width:740px) {
+    .About__navbar {
+        height: 6rem;
+        padding: 0px 2.5rem;
+    }
+
+    #Me {
+        height: 100%;
+    }
+
+    .Profile--Container {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    .Profile {
+        border: 2px solid white;
+        background-color: #101010;
+        margin: 3rem 0 0 0;
+        padding: 0rem 2.8rem;
+        height: 34rem;
+    }
+
+
+    .About-Me {
+        margin: 0rem 0rem 0.5rem 0rem;
+    }
+
+    .Profile--info {
+        width: 80vw;
+        height: 100%;
+        margin-top: 4rem;
+        padding: 0;
+        display: block;
+    }
+
+}
+
+@media screen and (max-width:1100px) {
+    .navbar__menu--Contact {
+        width: 100%;
+    }
+
+    .navbar__container--items {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:920px) {
+    .navbar__menu--Contact {
+        width: 100%;
+        /* height: 75%; */
+    }
+
+    .navbar__container--items {
+        width: 30%;
+    }
+
+    .navbar__menu--Contact p:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:925px) {
+    .navbar__menu--Contact {
+        width: 100%;
+        height: 60%;
+        /* margin-left: 1rem; */
+    }
+
+    .navbar__container--items {
+        width: 100%;
+        margin-left: 2rem;
+    }
+
+    .navbar__menu--Contact p:nth-child(2) {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:790px) {
+    .Navbar--Contact--Email {
+        margin-bottom: 0.1rem;
+    }
+}
+
+@media screen and (max-width:840px) {
+    .navbar__menu--Contact p:nth-child(2) {
+        font-size: 1rem !important;
+    }
+}
+
+@media screen and (max-width:740px) {
+    .navbar__menu-right {
+        display: none;
+    }
+
+    .navbar__menu-left {
+        width: 100%;
+    }
+
+    .navbar-active {
+        transition: all 0.6s ease;
+        /* background: rgb(100, 44, 197); */
+        background: black;
+    }
+
+    .navbar__container--items {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    .navbar__menu {
+        height: 690%;
+    }
+}
+
+.line-through {
+    text-decoration: line-through;
+}
